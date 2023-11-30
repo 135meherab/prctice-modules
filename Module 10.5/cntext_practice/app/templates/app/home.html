@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>Name: {{name}}</h1>
+    <h1>Github link: {{github}}</h1> -->
+    <h1>length Tepmlate: {{len | length}}</h1>
+    <h1>length Tepmlate: {{add_slashes | length}}</h1>
+    <h1>add Tepmlate: {{add | add:5}}</h1>
+    <h1>add slashes Tepmlate: {{ add_slashes | addslashes }}</h1>
+    <h1>capfirst Tepmlate: {{ add_slashes | capfirst }}</h1>
+    <h1>center Tepmlate:{{ add_slashes | center:"5"}}</h1>
+    <h1>cut Tepmlate: {{ cut | cut:"s" }}</h1>
+
+    <h1>date format Tepmlate: {{ date | date:"D d M Y" }}</h1>
+    <h1>time format Tepmlate: {{ date | time:"H:i" }}</h1>
+    <h1>time format Tepmlate: {{ date | time:"H\h i\m" }}</h1>
+
+    <h1>set default Tepmlate: {{ setd | default:"nothing" }}</h1>
+
+    <h1>sort lsit of dictionary by name : {{ sort | dictsort:"name" }}</h1>
+    <h1>sort lsit of dictionary by age : {{ sort | dictsort:"age" }}</h1>
+
+    <h1>diviseable : {{ add | divisibleby:"3" }}</h1>
+    <h1>diviseable : {{ add | divisibleby:"2" }}</h1>
+
+    <h1>first_item : {{ len | first}}</h1>
+    <h1>last_item : {{ len | last}}</h1>
+    <h1>random_item : {{ len | random}}</h1>
+    <h1>sliceing_list : {{ len | slice:'4'}}</h1>
+    <h1>join filter template : {{ len | join:'--'}}</h1>
+
+    <h1>get with line number: {{ linenumber | linenumbers}}</h1>
+
+    <h1>all char will lower: {{ string | lower}}</h1>
+    <h1>all char will upper: {{ string | upper }}</h1>
+    <h1>only 7 char will appear: {{ string | truncatechars:7 }}</h1>
+    <h1>only 2 char will appear: {{ string | truncatewords:2 }}</h1>
+    <h1>converting a string to list:  {{ string | make_list }}</h1>
+    <h1>count words: {{ string | wordcount }}</h1>
+    <h1>first char of every word will upper -> title: {{ title | title }}</h1>
+
+
+    <h1>escape template : {{html | escape}}</h1>
+    <h1>escape template : {{html | striptags}}</h1>
+    
+
+
+
+
+</body>
+</html>

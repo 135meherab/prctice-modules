@@ -1,0 +1,13 @@
+e{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Delete Album{% endblock title %}
+
+{% block content %}
+<form style='width:50%; margin:auto; padding-top:30px' method="POST">
+    {% csrf_token %}
+    <h1>Your really want to delete it ?</h1>
+    {{ form|crispy}}
+    <button class='btn btn-danger' type="submit">Delete</button>
+</form>
+{% endblock content %}

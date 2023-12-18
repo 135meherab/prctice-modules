@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}
+log Out comfirmation
+{% endblock title %}
+
+{% block content %}
+<form method='POST'>
+    {% csrf_token %}
+    <h1>You really want to log Out</h1>
+    <button class='btn btn-danger' type="submit">Log Out</button>
+</form>{% endblock content %}

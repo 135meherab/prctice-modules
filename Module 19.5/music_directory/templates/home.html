@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}
+Home page
+{% endblock title %}
+
+{% block content %}{% if messages%}
+{%for msg in messages%}
+<p class="bg-success text-white p-3">{{msg}}</p>
+{%endfor%}
+{%endif%}
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Musician Name</th>
+        <th>Email</th>
+        <th>Album Rating</th>
+        <th>Instrument Type</th>
+        <th>Album Name</th>
+        <th>Release Date</th>
+        {% if user.is_authenticated%}
+        <th>Action</th>
+        {%endif%}
+    </tr>
+    {%for dt in data%}
+    <tr>
+        <td>{{dt.id}}</td>
+        <td>
+            {% if user.is_authenticated%}
+            <a class='text-decoration-none text-black' href="{% url 'musician_edit' dt.musician.id %}">{{dt.musician.first_name}} {{dt.musician.last_name}}</a>
+            {%else%}
+            {{dt.musician.first_name}} {{dt.musician.last_name}}
+            {%endif%}
+        </td>
+        <td>{{dt.musician.email}}</td>
+        <td>{{dt.rating}}</td>
+        <td>{{dt.musician.instument}}</td>
+        <td>{{dt.album_name}}</td>
+        <td>{{dt.released_date}}</td>
+        {% if user.is_authenticated%}
+        <td>
+            <a href="{% url 'album_edit' dt.id %}" class='btn btn-warning'>Edit</a>
+            <a class='btn btn-danger' href="{% url 'album_delete' dt.id %}">Delete</a>
+        </td>
+        {%endif%}
+    </tr>
+    {%endfor%}
+    
+</table>
+
+{% endblock content %}
